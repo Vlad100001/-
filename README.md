@@ -43,7 +43,25 @@ mv  "Друзья человека.txt"  "Друзья_человека.txt"
 
 ### 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.
 
+```ruby
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+dpkg -i mysql-apt-config_0.8.18-1_all.deb
+```
+![2024-03-30_20-30-07](https://github.com/Vlad100001/-/assets/132137476/8e6284ff-f2fb-41c7-8408-db5871c99ddf)
+
+```ruby
+apt update
+apt install mysql-server
+```
+![2024-03-30_20-40-36](https://github.com/Vlad100001/-/assets/132137476/48754d84-1d46-4d8d-a1b1-595b8dfe47b7)
+
 ### 4. Установить и удалить deb-пакет с помощью dpkg.
+```ruby
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.18-1_all.deb
+sudo dpkg -r mysql-apt-config
+```
+![2024-03-30_21-13-13](https://github.com/Vlad100001/-/assets/132137476/6e93e712-1b74-49a2-90c4-923dce513898)
 
 ### 5. Выложить историю команд в терминале ubuntu
 
