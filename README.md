@@ -45,7 +45,7 @@ mv  "Друзья человека.txt"  "Друзья_человека.txt"
 
 ```ruby
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-dpkg -i mysql-apt-config_0.8.18-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.18-1_all.deb
 ```
 ![2024-03-30_20-30-07](https://github.com/Vlad100001/-/assets/132137476/8e6284ff-f2fb-41c7-8408-db5871c99ddf)
 
