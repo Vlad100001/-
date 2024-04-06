@@ -75,14 +75,84 @@ history
 
 ### 7. В подключенном MySQL репозитории создать базу данных “Друзья человека”
 ```ruby
-CREATE DATABASE IF NOT EXISTS ДрузьяЧеловека;
-   USE ДрузьяЧеловека;
+DROP DATABASE IF EXISTS `friends_man`;
+
+CREATE DATABASE IF NOT EXISTS `friends_man`;
 ```
 
 ### 8. Создать таблицы с иерархией из диаграммы в БД
 
 ```ruby
+USE friends_man;
 
+CREATE TABLE `animals` (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+  animals_class VARCHAR(30)
+);
+
+CREATE TABLE `cats` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `dogs` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `rabbits` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `guinea_pig` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `horses` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `camels` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `donkeys` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `pony` (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(40) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  `animal_class_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
+);
 
 ```
 
