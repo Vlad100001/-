@@ -183,7 +183,13 @@ VALUES  ('Упрямыш', 'Есть малину', '2015-01-28', 2),
 ### 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
 
 ```ruby
+INSERT INTO `horses_and_donkeys` (`name`, `skills`, `birth_date`, `animal_class_id`, `species`)
+SELECT `name`, `skills`, `birth_date`, `animal_class_id`, 'Horse' AS `species`
+FROM `horses`;
 
+INSERT INTO `horses_and_donkeys` (`name`, `skills`, `birth_date`, `animal_class_id`, `species`)
+SELECT `name`, `skills`, `birth_date`, `animal_class_id`, 'Donkey' AS `species`
+FROM `donkeys`;
 
 ```
 
