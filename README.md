@@ -108,16 +108,7 @@ CREATE TABLE `dogs` (
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
 );
 
-CREATE TABLE `rabbits` (
-   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
-  `name` VARCHAR(40) NOT NULL,
-  `skills` VARCHAR(100) NOT NULL,
-  `birth_date` DATE NOT NULL,
-  `animal_class_id` INT UNSIGNED NOT NULL,
-  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
-);
-
-CREATE TABLE `guinea_pig` (
+CREATE TABLE `hamsters` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
   `skills` VARCHAR(100) NOT NULL,
@@ -153,15 +144,6 @@ CREATE TABLE `donkeys` (
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
 );
 
-CREATE TABLE `pony` (
-   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
-  `name` VARCHAR(40) NOT NULL,
-  `skills` VARCHAR(100) NOT NULL,
-  `birth_date` DATE NOT NULL,
-  `animal_class_id` INT UNSIGNED NOT NULL,
-  FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
-);
-
 ```
 
 ### 9. Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения
@@ -170,43 +152,32 @@ CREATE TABLE `pony` (
 
 INSERT INTO `friends_man`.`animals` (`id`, `animals_class`) 
 VALUES ('1', 'pet'),
-	   ('2', 'wild');
+	('2', 'wild');
 
 INSERT INTO `friends_man`.`dogs` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES ('Полкан', 'Голос', '2019-05-01', 1),
-	   ('Макс', 'Прыжок через барьер', '2015-06-20', 1);
+	('Макс', 'Прыжок через барьер', '2015-06-20', 1);
 
 INSERT INTO `friends_man`.`cats` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES ('Барсик', 'Ловить мышей', '2021-10-10', 1),
-	   ('Матроскин', 'Ловить птиц','2020-05-10', 1);
+	('Матроскин', 'Ловить птиц','2020-05-10', 1);
   
-INSERT INTO `friends_man`.`rabbits` (`name`, `skills`, `birth_date`, `animal_class_id`) 
-VALUES ('Коржик', 'Бегать', '2020-02-20', 1),
-	   ('Веник', 'Прыгать','2022-03-10', 1);
-
-INSERT INTO `friends_man`.`guinea_pig` (`name`, `skills`, `birth_date`, `animal_class_id`) 
+INSERT INTO `friends_man`.`hamsters` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES ('Борька', 'Бегать в колесе', '2022-01-10', 1),
-	   ('Тихон','Строить дом', '2021-05-10', 1);
+	('Тихон','Строить дом', '2021-05-10', 1);
 
 INSERT INTO `friends_man`.`horses` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES ('Торнадо', 'Горцевать', '2015-01-28', 2),
-	   ('Злотовласка', 'Прыгать через барьеры','2020-04-19', 2);
+	('Злотовласка', 'Прыгать через барьеры','2020-04-19', 2);
 
 INSERT INTO `friends_man`.`camels` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES ('Горбушка', 'Прыгать', '2015-01-28', 2),
-	   ('Рыжик', 'Бегать','2020-04-19', 2);
+       ('Рыжик', 'Бегать','2020-04-19', 2);
   
 INSERT INTO `friends_man`.`donkeys` (`name`, `skills`, `birth_date`, `animal_class_id`) 
 VALUES  ('Упрямыш', 'Есть малину', '2015-01-28', 2),
-		('Метеор', 'Кувыркаться','2020-04-19', 2);
+        ('Метеор', 'Кувыркаться','2020-04-19', 2);
   
-INSERT INTO `friends_man`.`pony` (`name`, `skills`, `birth_date`, `animal_class_id`) 
-VALUES ('Сема', 'Бить копытом', '2015-01-28', 2),
-	   ('Игорь', 'Купаться','2020-04-19', 2);
-
-
-
-
 ```
 
 ### 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
