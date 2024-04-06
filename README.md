@@ -93,6 +93,7 @@ CREATE TABLE `animals` (
 CREATE TABLE `cats` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -101,6 +102,7 @@ CREATE TABLE `cats` (
 CREATE TABLE `dogs` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -109,6 +111,7 @@ CREATE TABLE `dogs` (
 CREATE TABLE `rabbits` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -117,6 +120,7 @@ CREATE TABLE `rabbits` (
 CREATE TABLE `guinea_pig` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -125,6 +129,7 @@ CREATE TABLE `guinea_pig` (
 CREATE TABLE `horses` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -133,6 +138,7 @@ CREATE TABLE `horses` (
 CREATE TABLE `camels` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+ `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -141,6 +147,7 @@ CREATE TABLE `camels` (
 CREATE TABLE `donkeys` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
@@ -149,6 +156,7 @@ CREATE TABLE `donkeys` (
 CREATE TABLE `pony` (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(40) NOT NULL,
+  `skills` VARCHAR(100) NOT NULL,
   `birth_date` DATE NOT NULL,
   `animal_class_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (`animal_class_id`) REFERENCES `animals` (`id`) ON DELETE CASCADE
